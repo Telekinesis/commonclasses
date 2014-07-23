@@ -5,9 +5,21 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.TreeMap;
 
 public class KeyToValueList<KEY_TYPE, VALUE_TYPE> {
-	private Map<KEY_TYPE, List<VALUE_TYPE>> map = new HashMap<KEY_TYPE, List<VALUE_TYPE>>();
+	private Map<KEY_TYPE, List<VALUE_TYPE>> map;
+	
+	public KeyToValueList(){
+	    this(false);
+	}
+	
+	public KeyToValueList(boolean sorted){
+	    if(sorted)
+		map = new TreeMap<KEY_TYPE, List<VALUE_TYPE>>();
+	    else
+		map = new HashMap<KEY_TYPE, List<VALUE_TYPE>>();
+	}
 	
 	public void put(KEY_TYPE key, VALUE_TYPE value){
 		List<VALUE_TYPE> values = map.get(key);

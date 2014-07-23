@@ -13,6 +13,8 @@ public class MapPrinter {
 			buffer.append(entry.getValue());
 			buffer.append('\n');
 		}
-		return buffer.toString();
+		String result = buffer.toString();
+		System.out.println(result);
+		return result;
 	}
 }
